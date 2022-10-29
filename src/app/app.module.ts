@@ -4,12 +4,17 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {UsersComponent} from './components/users/users.component';
-import {UserComponent} from './components/user/user.component';
-import {PostsComponent} from './components/posts/posts.component';
-import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
+import {CommentComponent} from "./components/comment/comment.component";
+import {CommentsComponent} from "./components/comments/comments.component";
 import {HeaderComponent} from './components/header/header.component';
-import { UserDetailsComponent } from './components/user-details/user-details.component';
+import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
+import {PostComponent} from "./components/post/post.component";
+import {PostsComponent} from './components/posts/posts.component';
+import {UserComponent} from './components/user/user.component';
+import {UserDetailsComponent} from './components/user-details/user-details.component';
+import {UsersComponent} from './components/users/users.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
 
 const routes: Routes = [
   {
@@ -20,7 +25,17 @@ const routes: Routes = [
           {path: ':id', component: UserDetailsComponent}
         ]
       },
-      {path: 'posts', component: PostsComponent}
+      {
+        path: 'posts', component: PostsComponent, children: [
+          {path: ':id', component: PostDetailsComponent}
+        ]
+      },
+      {
+        path: 'comments', component: CommentsComponent, children: [
+          {path: ':id', component: CommentDetailsComponent}
+        ]
+      }
+
     ]
   },
 ];
@@ -28,12 +43,17 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    UserComponent,
-    PostsComponent,
-    MainLayoutComponent,
+    CommentComponent,
+    CommentsComponent,
     HeaderComponent,
-    UserDetailsComponent
+    MainLayoutComponent,
+    PostComponent,
+    PostsComponent,
+    UserComponent,
+    UserDetailsComponent,
+    UsersComponent,
+    PostDetailsComponent,
+    CommentDetailsComponent
   ],
   imports: [
     BrowserModule,
