@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {IComment, IPost} from "../interfaces";
+import {IPost} from "../interfaces";
 import {urls} from "../configs";
 
 @Injectable({
@@ -20,8 +20,8 @@ export class PostService {
     return this.httpClient.get<IPost>(`${urls.posts}/${id}`);
   }
 
-  getByUserId(id: number): Observable<IComment[]> {
-    return this.httpClient.get<IComment[]>(`${urls.posts}/${id}/posts`);
+  getByUserId(id: number): Observable<IPost[]> {
+    return this.httpClient.get<IPost[]>(`${urls.posts}/${id}/posts`);
   }
 
 }
