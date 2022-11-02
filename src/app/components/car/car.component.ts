@@ -14,6 +14,7 @@ export class CarComponent implements OnInit {
 
   @Output()
   carForUpdate = new EventEmitter<ICar>();
+
   @Output()
   carIdForDelete = new EventEmitter<number>();
 

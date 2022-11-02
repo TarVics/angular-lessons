@@ -1,7 +1,6 @@
-<!--TODO ПОТРІБНО РЕАЛІЗУВАТИ-->
-<!--<app-form></app-form>-->
-<!--<hr>-->
+<app-form #form (submit)="cars.saveCar($event)"></app-form>
+<hr>
+<app-cars #cars (edit)="form.editCar($event)"></app-cars>
 
 <!--install angular/material https://material.angular.io -->
 <!--ng add @angular/material-->
-<app-cars></app-cars>
