@@ -38,6 +38,7 @@ export class CarsComponent implements OnInit {
         this.cars.push(value);
       })
     } else {
+      console.log('%%% UPDATE BY ID', car)
       this.carService.updateById(car.id, car).subscribe(value => {
         const editCar = this.cars.find(item => item.id === car.id);
         Object.assign(editCar!, value);
