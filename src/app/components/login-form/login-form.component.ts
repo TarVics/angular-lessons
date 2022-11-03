@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../services";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
 import {MatDialogRef} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+
+import {AuthService} from "../../services";
 
 @Component({
   selector: 'app-login-form',
@@ -43,5 +43,10 @@ export class LoginFormComponent implements OnInit {
         this.error = true;
       }
     });
+  }
+
+  register(): void {
+    this.router.navigate(['/register']);
+    this.dialogRef.close();
   }
 }

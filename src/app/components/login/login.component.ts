@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.matDialog.open(LoginFormComponent, {
       disableClose: true,
-      enterAnimationDuration: '1s',
-      exitAnimationDuration: '1s'
+      enterAnimationDuration: '200ms',
+      exitAnimationDuration: '200ms'
     });
   }
 
