@@ -1,0 +1,19 @@
+.tools {
+  display: flex;
+}
+
+.tools div {
+  margin: 0 10px;
+}
+
+.tools div:hover {
+  cursor: pointer;
+}
+
+.tool-bar {
+  justify-content: space-between;
+}
+
+.active {
+  color: red;
+}
