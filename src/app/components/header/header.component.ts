@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
     this.authService.getUserName().subscribe(value => this.username = value);
   }
 
-  logout() {
+  logout(): Promise<boolean> {
     this.authService.deleteTokens();
-    this.router.navigate(['/login']);
+    return this.router.navigate(['/login']);
   }
 }
