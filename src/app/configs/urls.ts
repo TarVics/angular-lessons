@@ -3,6 +3,7 @@ import {environment} from "../../environments/environment";
 const {API} = environment;
 
 const auth = `${API}/auth`;
+const user = `${API}/users`;
 
 const urls = {
   cars: `${API}/cars`,
@@ -10,7 +11,9 @@ const urls = {
     login: auth,
     refresh: `${auth}/refresh`
   },
-  users: `${API}/users`
+  user: {
+    create: user
+  }
 }
 
 export {

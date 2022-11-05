@@ -1,7 +1,7 @@
 <form [formGroup]="form" autocomplete="off">
   <mat-card>
     <mat-card-title>Register</mat-card-title>
-    <mat-error *ngIf="error">Login or password is incorrect</mat-error>
+    <mat-error *ngIf="error">Username already exists</mat-error>
     <mat-card-content>
       <div>
         <mat-form-field appearance="outline">

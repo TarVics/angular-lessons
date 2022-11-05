@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
     this.matDialog.open(RegisterFormComponent, {
       disableClose: true,
       enterAnimationDuration: '200ms',
-      exitAnimationDuration: '200ms'
+      exitAnimationDuration: '200ms',
+      hasBackdrop: false
     });
   }
 
